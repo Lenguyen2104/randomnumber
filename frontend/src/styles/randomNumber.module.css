@@ -1,0 +1,92 @@
+.numberContainer {
+  display: flex;
+  align-items: center;
+}
+
+.digitWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1px; /* Khoảng cách giữa các số */
+}
+
+/* Kích thước hình tròn */
+.circle {
+  position: absolute;
+  width: 20px; /* Đặt kích thước mặc định */
+  height: 30px; /* Đặt kích thước mặc định */
+  border-radius: 50%;
+  z-index: 1; /* Đặt z-index để hình tròn nằm dưới chữ số */
+  transition: opacity 0.3s ease; /* Thêm hiệu ứng chuyển tiếp */
+  margin-right: 3px;
+}
+
+/* Màu sắc */
+.red {
+  background-color: rgb(174, 36, 36);
+  font-size: 20px !important;
+}
+
+ .black {
+  background-color: black;
+  font-size: 20px !important;
+}
+
+/* Kích thước chữ số */
+.digit {
+  z-index: 2;
+  font-size: 24px;
+  position: relative;
+}
+
+.specRecord {
+  font-size: 34px;
+}
+
+.recordRed {
+  font-size: 30px;
+}
+
+/* Màu chữ khi quay ngẫu nhiên */
+.whiteText {
+  color: white;
+  font-size: 22px !important;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.redNumber {
+  color: red; /* Áp dụng màu đỏ cho số */
+}
+
+/* Ẩn hình tròn sau khi quay xong */
+.hidden {
+  opacity: 0;
+}
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+  
+
+
+
+ 
+}
+
+.digitWrapperDone {
+  margin: 0; /* Khoảng cách nhỏ hơn giữa các số trên thiết bị nhỏ */
+}
+
+/* Responsive cho các màn hình nhỏ hơn */
+@media (max-width: 480px) {
+  .digitWrapper {
+    margin: 0 1px; /* Khoảng cách nhỏ hơn giữa các số trên thiết bị nhỏ */
+  }
+  
+  .digitWrapperDone {
+    margin: 0; /* Khoảng cách nhỏ hơn giữa các số trên thiết bị nhỏ */
+  }
+}
+
+
