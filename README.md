@@ -9,6 +9,7 @@ This project is a lottery management system developed using Node.js, React, and 
 - [Setup Instructions](#setup-instructions)
 - [Docker Setup](#docker-setup)
 - [WebSocket Integration](#websocket-integration)
+- [Data Seeding](#data-seeding)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -38,7 +39,7 @@ This project is a lottery management system developed using Node.js, React, and 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/manh-nguyen-dev/lottery-app.git
+    git clone https://github.com/Lenguyen2104/randomnumber.git
     cd lottery
     ```
 
@@ -77,6 +78,40 @@ socket.on('error', (error) => {
     console.error('WebSocket error:', error);
 });
 ```
+
+## Data Seeding
+
+To seed initial data into the database if it’s the first time setting up, follow these steps:
+
+1. **Enter the backend container:**
+
+    ```bash
+    docker-compose exec backend sh
+    ```
+
+    This command will open a shell in the backend container.
+
+2. **Run the Seeder:**
+
+    Navigate to the directory containing the seeder file (if necessary) and run the seeder with the following command:
+
+    ```bash
+    node seeders/seed.js
+    ```
+
+    **Expected Result after successful seeding:**
+    ```
+    Sessions seeded: 5
+    Numbers seeded: 135
+    ```
+
+3. **If data already exists:**
+   
+   The seeder will skip adding existing sessions and numbers, and you will see the following messages:
+    ```
+    Sessions already exist. Skipping seeding sessions.
+    Numbers already exist. Skipping seeding numbers.
+    ```
 
 ## Contributing
 
